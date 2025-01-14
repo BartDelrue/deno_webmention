@@ -2,15 +2,21 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "jsr:@std/dotenv": "jsr:@std/dotenv@0.225.3",
       "jsr:@std/encoding": "jsr:@std/encoding@1.0.6",
       "jsr:@std/encoding@1.0.6": "jsr:@std/encoding@1.0.6"
     }
   },
   "redirects": {
+    "jsr:@std/dotenv/load": "https://jsr.io/@std/dotenv/0.225.3/load.ts",
     "jsr:@std/encoding/hex": "https://jsr.io/@std/encoding/1.0.6/hex.ts",
     "jsr:@std/encoding@1.0.6": "https://jsr.io/@std/encoding/1.0.6/mod.ts"
   },
   "remote": {
+    "https://jsr.io/@std/dotenv/0.225.3/load.ts": "01a4ad198c869b77723db289b96fd4f264a0ecd40e9c9c827a9a95eeb9b4da76",
+    "https://jsr.io/@std/dotenv/0.225.3/mod.ts": "612754b3a03318fc6ff1d3a5dc5972fa1784fea3f5f2c222c2529ddf0b53ac11",
+    "https://jsr.io/@std/dotenv/0.225.3/parse.ts": "ce05ca6aad8a533a50770c8eb01f3b93cb6c13435f7a16dae3c395f6a2861a7a",
+    "https://jsr.io/@std/dotenv/0.225.3/stringify.ts": "6cbe7ab1adc961c9e07491dbb1c1e453380f465e24d0e6be9950f0634718fc83",
     "https://jsr.io/@std/encoding/1.0.6/_base32_common.ts": "ab45ca2db2aa3c5d64d6c76ccf765eaef4416a2ebd46255f2fb44347d5663b0f",
     "https://jsr.io/@std/encoding/1.0.6/_validate_binary_like.ts": "719b2e6127b8ffb008c01a726c06c60de9b7c83208880ee651720a5cbfdd7637",
     "https://jsr.io/@std/encoding/1.0.6/ascii85.ts": "60f5bdb54c6e44c2df92f85135b4c3545c877b9f397b9fc2d08621f3e85ae9e5",

@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --allow-net --allow-env --unstable-kv --watch main.ts"
+    "dev": "deno run --allow-net --env --allow-env --unstable-kv --watch main.ts"
   },
   "imports": {
     "@std/encoding": "jsr:@std/encoding@1.0.6"
