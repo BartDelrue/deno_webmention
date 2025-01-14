@@ -1,0 +1,25 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@std/encoding": "jsr:@std/encoding@1.0.6",
+      "jsr:@std/encoding@1.0.6": "jsr:@std/encoding@1.0.6"
+    }
+  },
+  "redirects": {
+    "jsr:@std/encoding/hex": "https://jsr.io/@std/encoding/1.0.6/hex.ts",
+    "jsr:@std/encoding@1.0.6": "https://jsr.io/@std/encoding/1.0.6/mod.ts"
+  },
+  "remote": {
+    "https://jsr.io/@std/encoding/1.0.6/_base32_common.ts": "ab45ca2db2aa3c5d64d6c76ccf765eaef4416a2ebd46255f2fb44347d5663b0f",
+    "https://jsr.io/@std/encoding/1.0.6/_validate_binary_like.ts": "719b2e6127b8ffb008c01a726c06c60de9b7c83208880ee651720a5cbfdd7637",
+    "https://jsr.io/@std/encoding/1.0.6/ascii85.ts": "60f5bdb54c6e44c2df92f85135b4c3545c877b9f397b9fc2d08621f3e85ae9e5",
+    "https://jsr.io/@std/encoding/1.0.6/base32.ts": "175fe2627a836518f8755c0b778ae58b168c0e31086181f762f24e057a477032",
+    "https://jsr.io/@std/encoding/1.0.6/base58.ts": "701aed7336bd3c89bfa0648d00dd6de4ac95ae2de891d084700a92ca107d4862",
+    "https://jsr.io/@std/encoding/1.0.6/base64.ts": "838d630a03ae8ba7ddcab1a59eb6943e4fdc6ccfe0d19cf111ee6bc131011571",
+    "https://jsr.io/@std/encoding/1.0.6/base64url.ts": "5a39b5dddaa201be27782a90ffe6d9794a6e6ee2a9f1919bc9a1a48a76c30733",
+    "https://jsr.io/@std/encoding/1.0.6/hex.ts": "c7f4d71486d573ef2eb10b5d509e071297cfa85ca658d96f2b8221f9680a24ea",
+    "https://jsr.io/@std/encoding/1.0.6/mod.ts": "057d0e7fa708f0b62e0013c06f8520a4b5ce969b68171cc36f4c874b7c2f9921",
+    "https://jsr.io/@std/encoding/1.0.6/varint.ts": "14fffecdd350de8916dac05cff65dc953f13a921fdec86bda69b3cb4a4d08b6d"
+  }
+}
