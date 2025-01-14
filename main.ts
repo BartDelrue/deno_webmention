@@ -1,49 +1,29 @@
-import isURL from "./utils/isURL.ts";
-import VerificationQueue from "./verification-queue.ts";
-import service from "./service.ts";
-
-const verificationQueue = new VerificationQueue(service);
+import controller from "./controller.ts";
 
 Deno.serve(async (req) => {
   const { pathname, searchParams } = new URL(req.url);
   const method = req.method || "GET";
-  const id = searchParams.get("id");
-  const target = searchParams.get("target") || undefined
+  const key = searchParams.get("key");
+  const target = searchParams.get("target") || undefined;
 
   if (pathname !== "/") {
     return new Response(null, {
-      status: 400,
+      status: 404,
     });
   }
-  if (!id) {
-    return new Response(null, {
-      status: 400,
-    });
-  }
-
-  if (method === "POST") {
-    const formData = await req.formData();
-    const target = isURL(formData.get("target") + "");
-    const source = isURL(formData.get("source") + "");
-
-    if (!target || !source) {
-      return new Response(null, {
-        status: 400,
-      });
-    }
-
-    verificationQueue.add({ source, target }, id);
-
-    return new Response(null, {
-      status: 202,
+  if (!key) {
+    return new Response(JSON.stringify({message: "missing searchParam key"}), {
+      status: 422,
+      headers: {"content-type": "application/json"}
     });
   }
 
   if (method === "GET") {
-    const result = await service.get(id, target)
-    return new Response(JSON.stringify(result), {
-      headers: { "content-type": "application/json" },
-    });
+    return controller.get(req, {key, target})
+  }
+
+  if (method === "POST") {
+    return controller.post(req, {key})
   }
 
   return new Response();

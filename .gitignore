@@ -9,3 +9,5 @@
 
 # PHPStorm stuff
 .idea/
+
+.env
