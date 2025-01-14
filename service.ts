@@ -13,7 +13,7 @@ export default {
 
   async get(id: string, target?: string) {
     const prefix = [id];
-    if (target) prefix.push(target);
+    if (target) prefix.push(target.replace(/\/$/, ""));
 
     const entries = kv.list({ prefix });
 

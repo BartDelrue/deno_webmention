@@ -36,16 +36,16 @@ class VerificationQueue {
             console.log("Verified:", source.href);
             this.storage.set({
               id: item.id,
-              target: target.href,
-              source: source.href,
+              target: target.href.replace(/\/$/, ""),
+              source: source.href.replace(/\/$/, ""),
             });
           }
           else {
             console.log("not verified:", source.href);
             this.storage.delete({
               id: item.id,
-              target: target.href,
-              source: source.href,
+              target: target.href.replace(/\/$/, ""),
+              source: source.href.replace(/\/$/, ""),
             })
           }
         } catch (error) {
