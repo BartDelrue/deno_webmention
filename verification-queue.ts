@@ -41,6 +41,7 @@ class VerificationQueue {
             });
           }
           else {
+            console.log("not verified:", source.href);
             this.storage.delete({
               id: item.id,
               target: target.href,
@@ -66,8 +67,8 @@ class VerificationQueue {
     if (!response.ok) return false;
 
     const text = await response.text();
-
-    return text.includes(target.href);
+    const normalizedTarget = target.href.replace(/\/$/, "");
+    return text.includes(normalizedTarget);
   }
 }
 
