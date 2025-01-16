@@ -2,6 +2,7 @@ import service from "./service.ts";
 import isURL from "./utils/isURL.ts";
 import VerificationQueue from "./verification-queue.ts";
 import { encodeHex } from "@std/encoding";
+import { headers } from './main.ts'
 
 const verificationQueue = new VerificationQueue(service);
 const secret = Deno.env.get("SECRET");
@@ -11,7 +12,7 @@ export default {
   async get(_req: Request, { key, target }: { key: string; target?: string }) {
     const result = await service.get(key, target);
     return new Response(JSON.stringify(result), {
-      headers: { "content-type": "application/json" },
+      headers: { ...headers, "content-type": "application/json" },
     });
   },
 
@@ -24,7 +25,7 @@ export default {
     if (!target || !source) {
       return new Response(JSON.stringify({message: "Missing values target or source"}), {
         status: 422,
-        headers: {"content-type": "application/json"}
+        headers: {...headers, "content-type": "application/json"}
       });
     }
 
@@ -35,7 +36,7 @@ export default {
     if (key !== secretHash) {
       return new Response(JSON.stringify({message: "invalid key"}), {
         status: 422,
-        headers: {"content-type": "application/json"}
+        headers: {...headers, "content-type": "application/json"}
       });
     }
 
@@ -43,6 +44,7 @@ export default {
 
     return new Response(null, {
       status: 202,
+      headers
     });
   }
 };
